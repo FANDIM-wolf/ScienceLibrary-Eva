@@ -1,4 +1,4 @@
-import com.std.*;
+import com.ScienceEva.*;
 
 import java.util.ArrayList;
 
@@ -21,10 +21,14 @@ public class main {
         //check for existing personal code
         ObjectSpace.ValidatePersonalCode(ObjectSpace);
         System.out.println(ObjectSpace.GetPersonalCode());
-        ObjectBiology.AddInList(ObjectBiology);
+
         ObjectSpace.AddInList(ObjectSpace);
         ObjectSpace.AddInList(ObjectSpace);
         ObjectSpace.ShowListOfObjects();
-
+        Vector Vector_of_plane = new Vector();
+        Vector_of_plane.x = 12;
+        Vector_of_plane.y = 6;
+        Vector_of_plane.z = 2;
+        System.out.println("Magnitude Vector of Plane: "+Vector_of_plane.MagnitudeOfVector(Vector_of_plane));
     }
 }
