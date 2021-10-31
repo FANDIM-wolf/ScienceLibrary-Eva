@@ -3,12 +3,9 @@ package com.ScienceEva;
 
 import static java.lang.Math.sqrt;
 
-public class Vector {
-    public double x ;
-    public double y ;
-    public double z ;
-    public double lenght_of_vector;
-    public double magnitude;
+public class Vector extends  MathPackage{
+    public double x , y , z , length_of_vector, magnitude;
+
 
     public double CalculateVector(double x1 , double y1 , double x2 , double y2){
         double x = x2 - x1 ;
