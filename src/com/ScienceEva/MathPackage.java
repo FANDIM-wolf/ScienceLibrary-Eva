@@ -86,7 +86,7 @@ public class MathPackage {
     }
 
 
-    // functions to derivative ***
+    // functions for derivative ***
     // Written by Chitra Nayal
     private long derivativeTerm(String pTerm, long val)
     {
