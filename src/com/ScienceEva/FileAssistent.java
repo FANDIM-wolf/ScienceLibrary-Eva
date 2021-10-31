@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class FileAssistent {
 
-    public void PutMathPackageInFile (String  file_name , ArrayList list )
+    public void PutListDataInFile (String  file_name , ArrayList list )
              {
             try {
                 File file = new File(file_name);
