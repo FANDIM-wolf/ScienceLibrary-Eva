@@ -1,12 +1,10 @@
 package com.ScienceEva;
 
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.ArrayList;
 
-public class MathPackage {
+
+public class MathPackage implements  Serializable{
       private String name;
       private String professor;
       private int personalCode;
@@ -24,6 +22,10 @@ public class MathPackage {
          name = name_arg;
          setProfessor();
      }
+     public String getName(){
+        return this.name;
+     }
+
     public int number_in_power(int number_int ){
          return number_int * number_int;
     }
@@ -86,7 +88,7 @@ public class MathPackage {
     }
 
 
-    // functions for derivative ***
+    // functions to derivative ***
     // Written by Chitra Nayal
     private long derivativeTerm(String pTerm, long val)
     {
@@ -130,6 +132,45 @@ public class MathPackage {
     }
     // ***
 
+    public void SerializeObjectOfMathPackage(MathPackage object  )  {
+        // save all data of object
+        String name_f = object.name;
+        String professor_f = object.professor;
+        int personal_code_f = object.personalCode;
+        ArrayList<MathPackage> list_f = object.packages;
+        MathPackage object_f = new MathPackage();
+        object_f.name = name_f;
+        object_f.professor = professor_f;
+        object_f.personalCode = personal_code_f;
+        object_f.packages = list_f;
 
+        // create two thread for serialization and saving object
+        FileOutputStream outputStream = null;
+        try {
+            outputStream = new FileOutputStream("MathPackage.bin");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        ObjectOutputStream objectOutputStream = null;
+        try {
+            objectOutputStream = new ObjectOutputStream(outputStream);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        // save in file
+        try {
+            objectOutputStream.writeObject(object_f);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        //close thread
+        try {
+            objectOutputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 
 }

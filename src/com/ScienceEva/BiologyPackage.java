@@ -6,4 +6,5 @@ public class BiologyPackage extends MathPackage {
     public  void  GreetUserInConsole(){
         System.out.println("Biology object");
     }
+
 }
