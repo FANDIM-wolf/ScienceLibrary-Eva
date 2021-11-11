@@ -172,14 +172,5 @@ public class MathPackage implements  Serializable{
         }
 
     }
-      // written by SamJhonson 
-      //****
-      public int CreateMatryxInt (int rows , int collumns){
-	return int[][] matryx = new int[rows][collumns];
-      }
 
-      public double CreateMatryxInt (int rows , int collumns){
-	return double[][] matryx = new double[rows][collumns];
-      }
-      //****
 }
